@@ -19,7 +19,10 @@ def foo(request, user):
 
 
 # Pickles
-class RunBinSh(object):
+class RunBinSh():
+    """Added dockstring
+
+    """
     def __reduce__(self):
         return (subprocess.Popen, (('/bin/sh',),))
 
