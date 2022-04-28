@@ -27,12 +27,10 @@ class RunBinSh():
         return (subprocess.Popen, (('/bin/sh',),))
 
 def import_urlib_version(version):
-    if version == 2: 
+    if version == 2:
         replacement = 2
-    
     else:
         replacement = 3
-    
     exec("import urllib%s as urllib" % replacement)
 
 @app.route('/')
