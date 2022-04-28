@@ -20,14 +20,20 @@ def foo(request, user):
 
 # Pickles
 class RunBinSh():
-    """Added dockstring
+    """Added docstring
 
     """
     def __reduce__(self):
         return (subprocess.Popen, (('/bin/sh',),))
 
 def import_urlib_version(version):
-    exec("import urllib%s as urllib" % version)
+    if version == 2: 
+        replacement = 2
+    
+    else:
+        replacement = 3
+    
+    exec("import urllib%s as urllib" % replacement)
 
 @app.route('/')
 def index():
